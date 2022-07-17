@@ -1,9 +1,3 @@
-function userChoose(){
-    var userChoice = prompt("Rock? Paper? Scissors?");
-    userChoice = userChoice.toLowerCase();
-    return userChoice; 
-}
-
 function computerChoose(){
     var array = ["rock", "paper", "scissors"];
     let computerChoice = Math.floor(Math.random()*4);
@@ -21,9 +15,15 @@ function playRound(userChoice, computerChoice){
     return result;
 }
 
-var user = userChoose();
-var computer = computerChoose();
-var result = playRound(user, computer);
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    var user = button.id;
+    var computer = computerChoose();
+    var result = playRound(user, computer);
+    console.log("User played " + user + ". Computer played " + computer + ".\n" + result + "\n");
+  });
+});
 
-console.log("User played " + user + ". Computer played " + computer + ".\n" + result + "\n");
+
 
