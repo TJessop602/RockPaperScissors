@@ -35,8 +35,14 @@ body{
     display: flex;
     justify-content: space-evenly;
 }
-
+.player-container{
+    text-align: center;
+    font-size: 24px;
+}
 .player{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 200px;
     width: 200px;
     border-style:solid;
@@ -46,15 +52,16 @@ body{
     box-shadow: 3px 6px 6px rgb(0,100,0);
     margin:20px;
     padding: 10px;
-    text-align: center;
-    font-size: 32px;
+    font-size: 40px;
+    transition: all 0.2s;
+
 }
 
 .buttons{
     gap:20px;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 65px;
     padding: 30px;
 
 }
@@ -71,9 +78,22 @@ button{
     border-width: 5px;
     border-color: rgb(50,150,50);
     border-radius: 10px;
+    transition: all .1s ease;
 }
 button:hover{
     box-shadow: 0px 5px 5px 5px rgb(0,160,0);
     color: rgb(10,160,10);
     font-size: 120%;
 }
+
+.clicked {
+    transform: scale(0.95);
+    background-color: rgb(10,30,10);
+    box-shadow: 0px 5px 5px 5px rgb(0,80,0);
+    color: rgb(10,150,10);
+    pointer-events: none;
+  }
+
+  .disabled{
+    cursor: not-allowed;
+  }
