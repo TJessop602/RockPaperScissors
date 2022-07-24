@@ -9,12 +9,16 @@ function playRound(userChoice, computerChoice){
         result = "Draw";
     }else if((userChoice === "Rock" && computerChoice === "Scissors") || (userChoice === "Paper" && computerChoice === "Rock") || (userChoice === "Scissors" && computerChoice === "Paper")){
         result = "User Wins";
+        userScore = userScore+1;
     }else{
         result = "Computer Wins";
+        computerScore = computerScore+1;
     }
     return result;
 }
 
+let userScore = 0;
+let computerScore = 0;
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -25,8 +29,11 @@ buttons.forEach((button) => {
         document.getElementById('0').textContent = user;
         var computer = computerChoose();
         document.getElementById('1').textContent = computer;
-        var result = playRound(user, computer);
-        console.log("User played " + user + ". Computer played " + computer + ".\n" + result + "\n");
+        var result = playRound(user, computer, userScore, computerScore);
+        document.getElementById('t').textContent = result;
+        document.getElementById('s1').textContent = userScore;
+        document.getElementById('s2').textContent = computerScore;
+        console.log(userScore, computerScore);
 
     });
     
