@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    
+    <div class="page">
+        <div id = "t" class="title">Rock, Paper, Scissors</div>
+        <div class="playfield">
+            <div class="buttons">
+                <button id ="Rock">Rock</button>
+                <button id ="Paper">Paper</button>
+                <button id ="Scissors">Scissors</button>
+            </div>
+            <div class="players">
+                <div class="player-container">
+                    <p class = "playername">User</p>
+                    <div id="0" class="player user"></div>
+                    <p id = "s1" class="score">0</p>
+                </div>
+                <div class="player-container">
+                    <p class="playername">Computer</p>
+                    <div id="1" class="player computer"></div>
+                    <p id = "s2" class="score">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
